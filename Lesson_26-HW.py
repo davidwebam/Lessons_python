@@ -3,41 +3,34 @@ import math
 
 class Triangle:
     def __init__(self, a, b, c):
-        # Ստուգում՝ կողմերը դրական են
         if a <= 0 or b <= 0 or c <= 0:
-            raise ValueError("Եռանկյան կողմերը պետք է լինեն դրական թվեր")
+            raise ValueError("Erankyan koxmery petq e linen drakan tver")
 
-        # Եռանկյան գոյության պայման
         if a + b <= c or a + c <= b or b + c <= a:
-            raise ValueError("Տրված կողմերով եռանկյուն գոյություն չունի")
+            raise ValueError("Trvats erankyan koxmerov erankyun anhnar e")
 
         self.a = a
         self.b = b
         self.c = c
 
-    # Կողմերը
     def sides(self):
         return self.a, self.b, self.c
 
-    # Պարագիծ
     def perimeter(self):
         return self.a + self.b + self.c
 
-    # Մակերես (Հերոնի բանաձև)
     def area(self):
         p = self.perimeter() / 2
         return math.sqrt(p * (p - self.a) * (p - self.b) * (p - self.c))
 
-    # Տեսակը ըստ կողմերի
     def type_by_sides(self):
         if self.a == self.b == self.c:
-            return "Հավասարակողմ եռանկյուն"
+            return "Havasarakoxm erankyun"
         elif self.a == self.b or self.a == self.c or self.b == self.c:
-            return "Հավասարասրուն եռանկյուն"
+            return "Havasarasrun erankyun"
         else:
-            return "Անկանոն եռանկյուն"
+            return "Ankanon erankyun"
 
-    # Ուղղանկյուն է, թե ոչ
     def is_right_triangle(self):
         sides = sorted([self.a, self.b, self.c])
         return math.isclose(
@@ -45,7 +38,6 @@ class Triangle:
             sides[2] ** 2
         )
 
-    # Անկյունները (աստիճաններով)
     def angles(self):
         A = math.degrees(math.acos(
             (self.b**2 + self.c**2 - self.a**2) / (2 * self.b * self.c)
