@@ -48,10 +48,8 @@ class Triangle:
         C = 180 - A - B
         return A, B, C
 
-    # Ներգծած շրջանագծի շառավիղ
     def inradius(self):
         return self.area() / (self.perimeter() / 2)
 
-    # Արտագծած շրջանագծի շառավիղ
     def circumradius(self):
         return (self.a * self.b * self.c) / (4 * self.area())
