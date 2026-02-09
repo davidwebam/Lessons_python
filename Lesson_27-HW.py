@@ -121,3 +121,17 @@ class BankUser:
             self.__restore_code = None
             return "mutqy verajangvats e"
         raise ValueError("Sxal verakangman kod")
+
+
+user = BankUser(
+    "David", "Voskanyan", 25,
+    "voskanyandavit83@gmail.com",
+    "4539 1488 0343 6467",
+    1000,
+    "1234"
+)
+
+print(user.get_full_name())
+print(user.get_card_info("1234"))
+user.add_money(500, "1234")
+user.withdraw_money(300, "1234")
