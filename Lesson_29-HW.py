@@ -135,12 +135,12 @@ movie = MyShows(
     1999,
     reached=1000000,
     rating=0,
-    actors=['Keanu Reeves', 'Laurence Fishburne', 'Carrie-Anne Moss']
+    actors=['Gaspar Hayrapetyan', 'Vaspur Harutyunyan', 'Varazdat Xaribyan']
 )
 
 
 movie.rating = 8
-movie.remove_actor('Laurence Fishburne')
+movie.add_actor('Tony Stark')
 print(movie.get_full_info())
 
     
